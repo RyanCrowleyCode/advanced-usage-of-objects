@@ -25,6 +25,13 @@ const bill = {
 // Lightning Exercise 2: Copy the code below and paste it above your object.
 // Use square bracket notation to output the value of those three properties to the console in Chrome.
 
-console.log("Date Visited: ", bill[dateVisited])
-console.log("Amount owed: ", bill[owed])
-console.log("Patient: ", bill[patient])
+// console.log("Date Visited: ", bill[dateVisited])
+// console.log("Amount owed: ", bill[owed])
+// console.log("Patient: ", bill[patient])
+
+
+// Lightning Exercise 3: Use Object.values() to output all the property values to the console in Chrome.
+
+for (const value of Object.values(bill)) {
+    console.log(value)
+}
