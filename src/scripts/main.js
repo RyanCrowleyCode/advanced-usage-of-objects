@@ -56,5 +56,5 @@ const favFood = {
 
 // Lightning Exercise 2: Output all of the key/value pairs into the DOM inside an <article> element with a class of food.
 for (const entry of Object.entries(favFood)) {
-    containerEl.innerHTML += `<div>${entry[0]}: ${entry[1]}</dv>`
+    containerEl.innerHTML += `<p>${entry[0]}: ${entry[1]}</p>`
 }
