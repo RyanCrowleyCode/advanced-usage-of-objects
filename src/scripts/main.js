@@ -1,9 +1,8 @@
-// Practice: Car Sales
-import salesByWeek from "./data.js"
-import createSalespersonHtml from "./salespersonHtmlBuilder.js"
+import buildDom from "./domBuilder.js"
 
-// targeting the container div
-let containerEl = document.querySelector("#container")
+
+buildDom.buildFromData("")
+
 
 
 
