@@ -8,19 +8,23 @@ const Listeners = {
 
     listenToSearch: function () {
         searchInput.addEventListener('keypress', event => {
-            if (event.charCode === 13) {
-                const searchTerm = event.target.value
-
-                const salesPersonArray = []
-                salesByWeek.forEach(sale => {
-                    const salesPerson = sale.sales_agent
-                    for (const value of Object.values(salesPerson)) {
-                        if (value.toLowerCase() === searchTerm.toLowerCase()) {
-                            salesPersonArray.push(sale)
+            if (searchInput.value) {
+                if (event.charCode === 13) {
+                    const searchTerm = event.target.value
+                    
+                    const salesPersonArray = []
+                    salesByWeek.forEach(sale => {
+                        const salesPerson = sale.sales_agent
+                        for (const value of Object.values(salesPerson)) {
+                            if (value.toLowerCase() === searchTerm.toLowerCase()) {
+                                salesPersonArray.push(sale)
+                            }
                         }
-                    }
-                })
-                buildDom.buildFromData(salesPersonArray)
+                    })
+                    buildDom.buildFromData(salesPersonArray)
+                }
+            } else {
+                buildDom.buildFromData(salesByWeek)
             }
         })
     }
