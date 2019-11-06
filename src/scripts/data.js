@@ -108,5 +108,5 @@ const salesByWeek = [
 
 export default salesByWeek
 
-const containerEl = document.querySelector("#container")
+
 
