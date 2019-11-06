@@ -7,8 +7,8 @@ const buildDom = {
 
         // targeting the container div
         let containerEl = document.querySelector("#container")
-        
-        salesByWeek.forEach(sale => {
+
+        data.forEach(sale => {
             const salesperson = `${sale.sales_agent.first_name} ${sale.sales_agent.last_name} `
             const car = sale.vehicle
             const profit = sale.gross_profit
