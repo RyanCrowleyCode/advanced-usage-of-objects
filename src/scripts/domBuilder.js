@@ -8,6 +8,9 @@ const buildDom = {
         // targeting the container div
         let containerEl = document.querySelector("#container")
 
+        // clearing out the container div
+        containerEl.innerHTML = ""
+
         data.forEach(sale => {
             const salesperson = `${sale.sales_agent.first_name} ${sale.sales_agent.last_name} `
             const car = sale.vehicle

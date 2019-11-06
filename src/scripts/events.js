@@ -7,22 +7,20 @@ const searchInput = document.querySelector("#searchInput")
 const Listeners = {
 
     listenToSearch: function () {
-        searchInput.addEventListener('keyup', () => {
-            if (searchInput.value) {
-                if (event.charCode === 13) {
-                    const searchTerm = event.target.value
-                    if (searchTerm) {
-                        console.log(searchTerm)
-                        // filter salesByWeek data
-                        // run domBuilder on new filtered array
-                        salesByWeek.forEach(sale => {
-                            
-                        })
+        searchInput.addEventListener('keypress', event => {
+            if (event.charCode === 13) {
+                const searchTerm = event.target.value
+
+                const salesPersonArray = []
+                salesByWeek.forEach(sale => {
+                    const salesPerson = sale.sales_agent
+                    for (const value of Object.values(salesPerson)) {
+                        if (value.toLowerCase() === searchTerm.toLowerCase()) {
+                            salesPersonArray.push(sale)
+                        }
                     }
-                }
-            } else {
-                // when there is nothing typed in the search field, the DOM will populate with all of the data from data.js
-                buildDom.buildFromData(salesByWeek)
+                })
+                buildDom.buildFromData(salesPersonArray)
             }
         })
     }
